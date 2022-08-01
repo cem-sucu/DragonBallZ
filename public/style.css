@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
+
+.splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(242,0,0,1) 0%, rgba(251,200,23,1) 65%);
+    z-index: 200;
+    color: #F20000;
+    font-size: 3em;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 90vh;
+    letter-spacing: 1em;
+}
+
+.splash.display-none {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(242,0,0,1) 0%, rgba(251,200,23,1) 65%);
+    z-index: -10;
+    color: #F20000;
+    text-align: center;
+    line-height: 90vh;
+    transition: all 1.3s;
+}
+
+@keyframes tracking-out-contract {
+    0% {
+        opacity: 1
+    }
+
+    50% {
+        opacity: 1
+    }
+
+    100% {
+        letter-spacing: -.4em;
+        opacity: 0
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 5s ease-in forwards;
+    font-family: 'Square Peg', cursive;
+    font-size: 40px;
+    animation: tracking-out-contract 2s cubic-bezier(.55, .085, .68, .53) both;
+}
+

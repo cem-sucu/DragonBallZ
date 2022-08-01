@@ -4,9 +4,27 @@ import Goku from "./Goku";
 import Vegeta from "./Vegeta";
 import boule from "./boule-de-crystale.png";
 import dbz from "./dbz-logo.png";
+import song from "./song.mp3";
 
 class App extends Component {
-    state = {};
+    state = {
+        audio: new Audio(song),
+
+        isPlaying: false,
+    };
+
+    playPause = () => {
+        let isPlaying = this.state.isPlaying;
+
+        if (isPlaying) {
+            this.state.audio.pause();
+        } else {
+            this.state.audio.play();
+        }
+
+        this.setState({ isPlaying: !isPlaying });
+    };
+
     render() {
         return (
             <div className="container text-center">
@@ -30,6 +48,17 @@ class App extends Component {
                 <div className="row">
                     <Vegeta name="Vegeta" />
                     <p className="versus">Vs</p>
+                    <div className="song">
+                        <p>
+                            {this.state.isPlaying
+                                ? "Musique en cours"
+                                : "Musique sur pause"}
+                        </p>
+
+                        <button className="songBtn" onClick={this.playPause}>
+                            Play | Pause
+                        </button>
+                    </div>
                     <Goku name="Goku" />
                 </div>
             </div>

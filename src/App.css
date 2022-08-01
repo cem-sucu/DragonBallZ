@@ -110,6 +110,28 @@ h1:hover {
     font-family: 'Square Peg', cursive;
     color: #F20000;
     font-weight: bold;
+    position: absolute;
+    padding-right: 130px;
+}
+
+.song {
+    font-weight: bold;
+    font-size: xx-large;
+    font-family: 'Square Peg', cursive;
+    text-align: center;
+    background-color: #FBC817;
+    color: darkred;
+}
+
+.songBtn {
+    border-radius: 12px;
+    color: darkred;
+    font-weight: bolder;
+}
+
+.songBtn:hover {
+    background-color: #F20000;
+    color: #FBC817;
 }
 
 .btn {
@@ -135,5 +157,3 @@ td {
     color: red;
     font-weight: 900;
 }
-
-.table {}
