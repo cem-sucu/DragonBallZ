@@ -17,7 +17,7 @@ class Vegeta extends Component {
     render() {
         return (
             <div className="col">
-                <img src={vegeta} alt="vegeta" height={575} /> <br />
+                <img src={vegeta} alt="vegeta" height={570} /> <br />
                 <button onClick={this.addOne} className="btn">
                     {this.props.name} Frappe
                 </button>

@@ -17,7 +17,7 @@ class Goku extends Component {
     render() {
         return (
             <div className="col">
-                <img src={goku} alt="Goku" height={575}/> <br />
+                <img src={goku} alt="Goku" height={570}/> <br />
                 <button onClick={this.addOne} className="btn">
                     {this.props.name} Frappe
                 </button>

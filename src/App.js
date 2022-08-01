@@ -25,7 +25,7 @@ class App extends Component {
                         width={170}
                     />
                 </h1>
-                <hr />
+                <br />
 
                 <div className="row">
                     <Vegeta name="Vegeta" />
