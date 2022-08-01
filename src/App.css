@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
+
+/******* INTRO */
+
+/********/
 .App {
   text-align: center;
 }
@@ -32,7 +37,96 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
+
+/****************/
+/******* logo dbz */
+h1 {
+  box-shadow: 3px 3px 5px 4px #F20000, 0.2em 0.2em .9em #FBC817;
+  text-align-last: center;
+  border-radius: 11px;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+h1:hover {
+  box-shadow:3px 2px 5px 4px#FBC817, 0em 0 .9em #F20000;
+  text-align-last: center;
+  border-radius: 11px;
+}
+
+
+#imgtourne {
+  border-radius: 100px;
+  margin-left: 0px;
+  -webkit-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/**********/
+
+/******* body */
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.versus{
+  font-size: 163px;
+  font-family: 'Square Peg', cursive;
+  color: #F20000;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #61dafb;
+  height: 32px;
+  border-radius: 14px;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #F20000;
+}
+
+th {
+  color: blue;
+  font-size: 20px;
+
+}
+
+td {
+  color: red;
+  font-weight: 900;
+}
+
+.table {}
