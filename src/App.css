@@ -134,6 +134,29 @@ h1:hover {
     color: #FBC817;
 }
 
+.col {
+    display: inline-grid;
+}
+
+.vegeta {
+    float: right;
+}
+
+.goku {
+    float: left;
+}
+
+.saiyan {
+    position: absolute;
+    height: 52%;
+    width: 12%;
+}
+.saiyanG{
+    position: absolute;
+    height: 49%;
+    width: 12%;
+}
+
 .btn {
     background-color: #61dafb;
     height: 32px;
