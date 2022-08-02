@@ -146,15 +146,16 @@ h1:hover {
     float: left;
 }
 
-.saiyan {
+.saiyanV {
     position: absolute;
-    height: 52%;
-    width: 12%;
+    height: 48%;
+    width: 10%;
 }
-.saiyanG{
+
+.saiyanG {
     position: absolute;
-    height: 49%;
-    width: 12%;
+    height: 45.3%;
+    width: 11%;
 }
 
 .btn {

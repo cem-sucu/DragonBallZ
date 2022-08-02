@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import "./App.css";
 import Goku from "./Goku";
 import Vegeta from "./Vegeta";
-import boule from "./boule-de-crystale.png";
-import dbz from "./dbz-logo.png";
-import song from "./song.mp3";
+import boule from "./assets/images/boule-de-crystale.png";
+import dbz from "./assets/images/dbz-logo.png";
+import song from "./assets/music/song.mp3";
 
 class App extends Component {
     state = {

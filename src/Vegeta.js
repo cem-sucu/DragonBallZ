@@ -1,7 +1,11 @@
 import React, { Component } from "react";
-import vegeta from "./vegeta.png";
+import vegeta from "./assets/images/vegeta.png";
 import "./App.css";
-import superSaiyan from "./saiyan.gif";
+import superSaiyan from "./assets/images/saiyan.gif";
+import finalFlash from "./assets/music/vegeta-final-flash.mp3";
+import punch from "./assets/music/punch.mp3"
+import kamehameha from "./assets/music/kamehameha.mp3"
+
 
 class Vegeta extends Component {
     state = {
@@ -31,13 +35,29 @@ class Vegeta extends Component {
         });
     };
 
+    finalFlashBtn = () => {
+        new Audio(finalFlash).play();
+    };
+
+    superSaiyanBtn = () => {
+        new Audio(superSaiyan).play();
+    }
+
+    punchBtn = () => {
+        new Audio(punch).play();
+    }
+
+    kamehamehaBtn = () => {
+        new Audio(kamehameha).play();
+    }
+    
     render() {
         return (
             <div className="col">
                 {this.state.show ? (
                     <div id="ss">
                         <img
-                            className="saiyan"
+                            className="saiyanV"
                             src={superSaiyan}
                             alt="saiyan"
                         />
@@ -52,13 +72,13 @@ class Vegeta extends Component {
                     height={570}
                 />{" "}
                 <br />
-                <button onClick={this.addOne} className="btn">
+                <button onClick={this.punchBtn} className="btn">
                     {this.props.name} poing Kikôha
                 </button>
-                <button onClick={this.addKick} className="btn">
-                    {this.props.name} Gamma Burst Flash
+                <button onClick={this.finalFlashBtn} className="btn">
+                    {this.props.name} Final Flash
                 </button>
-                <button onClick={this.kamehame} className="btn">
+                <button onClick={this.kamehamehaBtn} className="btn">
                     {this.props.name} Kamehameha
                 </button>
                 <button

@@ -1,7 +1,10 @@
 import React, { Component } from "react";
-import goku from "./Goku.jpg";
+import goku from "./assets/images/Goku.jpg";
 import "./App.css";
-import superSaiyan from "./saiyan.gif";
+import superSaiyan from "./assets/images/saiyan.gif";
+import punch from "./assets/music/punch.mp3";
+import kamehameha from "./assets/music/kamehameha.mp3";
+import dragonPunch from "./assets/music/dragon-punch.mp3"
 
 class Goku extends Component {
     state = {
@@ -29,6 +32,19 @@ class Goku extends Component {
             };
         });
     };
+
+    punchBtn = () => {
+        new Audio(punch).play();
+    };
+
+    kamehamehaBtn = () => {
+        new Audio(kamehameha).play();
+    }
+
+    dragonPunchBtn = () => {
+        new Audio(dragonPunch).play();
+    }
+
     render() {
         return (
             <div className="col">
@@ -45,13 +61,13 @@ class Goku extends Component {
                 )}
                 <img className="goku" src={goku} alt="Goku" height={570} />{" "}
                 <br />
-                <button onClick={this.addOne} className="btn">
+                <button onClick={this.punchBtn} className="btn">
                     {this.props.name} coup de poing Kikôha
                 </button>
-                <button onClick={this.addKick} className="btn">
-                    {this.props.name} coup de pied Kienzan
+                <button onClick={this.dragonPunchBtn} className="btn">
+                    {this.props.name} dragon punch multpiple
                 </button>
-                <button onClick={this.kamehame} className="btn">
+                <button onClick={this.kamehamehaBtn} className="btn">
                     {this.props.name} kamehameha ultime
                 </button>
                 <button

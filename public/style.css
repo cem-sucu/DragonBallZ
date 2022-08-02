@@ -8,7 +8,7 @@
     height: 100vh;
     background: linear-gradient(0deg, rgba(242,0,0,1) 0%, rgba(251,200,23,1) 65%);
     z-index: 200;
-    color: #F20000;
+    color: #7b0101;
     font-size: 3em;
     font-weight: bolder;
     text-align: center;
@@ -25,7 +25,7 @@
     height: 100vh;
     background: linear-gradient(0deg, rgba(242,0,0,1) 0%, rgba(251,200,23,1) 65%);
     z-index: -10;
-    color: #F20000;
+    color: #f00000;
     text-align: center;
     line-height: 90vh;
     transition: all 1.3s;
