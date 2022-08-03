@@ -61,6 +61,20 @@ h1:hover {
     border-radius: 11px;
 }
 
+.scale-up-center {
+    animation: scale-up-center 3s ease-in 3s infinite alternate both
+}
+
+@keyframes scale-up-center {
+    0% {
+        transform: scale(.5)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
 
 #imgtourne {
     border-radius: 100px;

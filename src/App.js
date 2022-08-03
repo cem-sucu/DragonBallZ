@@ -35,7 +35,7 @@ class App extends Component {
                         alt="boule-crystale"
                         width={170}
                     />
-                    <img id="logo" src={dbz} alt="dbz" width={400} />
+                    <img className="scale-up-center" src={dbz} alt="dbz" width={400} />
                     <img
                         id="imgtourne"
                         src={boule}
