@@ -6,10 +6,13 @@ import finalFlash from "./assets/music/vegeta-final-flash.mp3";
 import punch from "./assets/music/punch.mp3";
 import kamehameha from "./assets/music/kamehameha.mp3";
 import countHits from "./countHits";
+import modeSaiyan from "./assets/music/super-saiyan-2.mp3"
 
 class Vegeta extends Component {
     state = {
         show: false,
+        superS:false,
+
     };
     // effets sonore
     finalFlashBtn = () => {
@@ -17,7 +20,7 @@ class Vegeta extends Component {
     };
     // effets sonore
     superSaiyanBtn = () => {
-        new Audio(superSaiyan).play();
+        new Audio(modeSaiyan).play();
     };
     // effets sonore
     punchBtn = () => {
@@ -30,6 +33,16 @@ class Vegeta extends Component {
 
     render() {
         const { name, addOneHit, hocState, addKick, kameha, life } = this.props;
+
+        const lifeValue =
+            life > 0 ? (
+                <td>{life} %</td>
+            ) : (
+                <td>
+                    <span className="dead">Perdu</span>
+                </td>
+            );
+
         return (
             <div className="col">
                 {this.state.show ? (
@@ -48,9 +61,7 @@ class Vegeta extends Component {
                         <tr>
                             <th scope="col">Vie</th>
                             <tbody>
-                                <tr>
-                                    <td>{life} %</td>
-                                </tr>
+                                <tr>{lifeValue}</tr>
                             </tbody>
                         </tr>
                     </thead>
@@ -63,13 +74,13 @@ class Vegeta extends Component {
                 />{" "}
                 <br />
                 <button onClick={addOneHit} className="btn">
-                    {name} coup de poing Kikôha
+                    {name} coup de poing Kikôha <button onClick={this.punchBtn}>🔊</button>
                 </button>
                 <button onClick={addKick} className="btn">
-                    {name} Final Flash
+                    {name} Final Flash <button onClick={this.finalFlashBtn}>🔊</button>
                 </button>
                 <button onClick={kameha} className="btn">
-                    {name} Kamehameha
+                    {name} Kamehameha <button onClick={this.kamehamehaBtn}>🔊</button>
                 </button>
                 <button
                     onClick={() => {
@@ -77,8 +88,9 @@ class Vegeta extends Component {
                     }}
                     className="btn"
                 >
-                    {this.props.name} transformation
+                    {this.props.name} transformation <button onClick={this.superSaiyanBtn}>🔊</button>
                 </button>
+                
                 <table className="table">
                     <thead>
                         <tr>

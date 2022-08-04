@@ -125,7 +125,7 @@ h1:hover {
     color: #F20000;
     font-weight: bold;
     position: absolute;
-    padding-right: 130px;
+    padding-right: 50px;
 }
 
 .song {
@@ -194,4 +194,15 @@ th {
 td {
     color: red;
     font-weight: 900;
+}
+
+.dead {
+    background-color: #FBC817;
+    border-radius: 5px;
+    font-size: 20px;
+ 
+}
+
+.jaugeVie{
+    z-index: 2;
 }
