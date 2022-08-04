@@ -3,55 +3,33 @@ import vegeta from "./assets/images/vegeta.png";
 import "./App.css";
 import superSaiyan from "./assets/images/saiyan.gif";
 import finalFlash from "./assets/music/vegeta-final-flash.mp3";
-import punch from "./assets/music/punch.mp3"
-import kamehameha from "./assets/music/kamehameha.mp3"
-
+import punch from "./assets/music/punch.mp3";
+import kamehameha from "./assets/music/kamehameha.mp3";
+import countHits from "./countHits";
 
 class Vegeta extends Component {
     state = {
-        hits: 0,
         show: false,
     };
-
-    addOne = () => {
-        this.setState((prevState) => {
-            return {
-                hits: prevState.hits + 1,
-            };
-        });
-    };
-    addKick = () => {
-        this.setState((prevState) => {
-            return {
-                hits: prevState.hits + 15,
-            };
-        });
-    };
-    kamehame = () => {
-        this.setState((prevState) => {
-            return {
-                hits: prevState.hits + 50,
-            };
-        });
-    };
-
+    // effets sonore
     finalFlashBtn = () => {
         new Audio(finalFlash).play();
     };
-
+    // effets sonore
     superSaiyanBtn = () => {
         new Audio(superSaiyan).play();
-    }
-
+    };
+    // effets sonore
     punchBtn = () => {
         new Audio(punch).play();
-    }
-
+    };
+    // effets sonore
     kamehamehaBtn = () => {
         new Audio(kamehameha).play();
-    }
-    
+    };
+
     render() {
+        const { name, addOneHit, hocState, addKick, kameha, life } = this.props;
         return (
             <div className="col">
                 {this.state.show ? (
@@ -65,6 +43,18 @@ class Vegeta extends Component {
                 ) : (
                     true
                 )}
+                <table className="jaugeVie">
+                    <thead>
+                        <tr>
+                            <th scope="col">Vie</th>
+                            <tbody>
+                                <tr>
+                                    <td>{life} %</td>
+                                </tr>
+                            </tbody>
+                        </tr>
+                    </thead>
+                </table>
                 <img
                     className="vegeta"
                     src={vegeta}
@@ -72,14 +62,14 @@ class Vegeta extends Component {
                     height={570}
                 />{" "}
                 <br />
-                <button onClick={this.punchBtn} className="btn">
-                    {this.props.name} poing Kikôha
+                <button onClick={addOneHit} className="btn">
+                    {name} coup de poing Kikôha
                 </button>
-                <button onClick={this.finalFlashBtn} className="btn">
-                    {this.props.name} Final Flash
+                <button onClick={addKick} className="btn">
+                    {name} Final Flash
                 </button>
-                <button onClick={this.kamehamehaBtn} className="btn">
-                    {this.props.name} Kamehameha
+                <button onClick={kameha} className="btn">
+                    {name} Kamehameha
                 </button>
                 <button
                     onClick={() => {
@@ -93,11 +83,13 @@ class Vegeta extends Component {
                     <thead>
                         <tr>
                             <th scope="col">Coups</th>
+                            {/* <th scope="col">Vie</th> */}
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{this.state.hits}</td>
+                            <td>{hocState.hits}</td>
+                            {/* <td>{life} %</td> */}
                         </tr>
                     </tbody>
                 </table>
@@ -106,4 +98,4 @@ class Vegeta extends Component {
     }
 }
 
-export default Vegeta;
+export default countHits(Vegeta);

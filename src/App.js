@@ -9,8 +9,21 @@ import song from "./assets/music/song.mp3";
 class App extends Component {
     state = {
         audio: new Audio(song),
-
         isPlaying: false,
+        vegeta: 100,
+        goku: 100,
+    };
+
+    reduceLife = (param) => {
+       if(param === "Goku") {
+        this.setState({
+            vegeta: this.state.vegeta - 10
+        })
+       } else {
+        this.setState({
+            goku: this.state.goku - 10
+        })
+       }
     };
 
     playPause = () => {
@@ -35,7 +48,12 @@ class App extends Component {
                         alt="boule-crystale"
                         width={170}
                     />
-                    <img className="scale-up-center" src={dbz} alt="dbz" width={400} />
+                    <img
+                        className="scale-up-center"
+                        src={dbz}
+                        alt="dbz"
+                        width={400}
+                    />
                     <img
                         id="imgtourne"
                         src={boule}
@@ -46,7 +64,11 @@ class App extends Component {
                 <br />
 
                 <div className="row">
-                    <Vegeta name="Vegeta" />
+                    <Vegeta
+                        name="Vegeta"
+                        life={this.state.vegeta}
+                        reduceHandler={this.reduceLife}
+                    />
                     <p className="versus">Vs</p>
                     <div className="song">
                         <p>
@@ -59,7 +81,11 @@ class App extends Component {
                             Play | Pause
                         </button>
                     </div>
-                    <Goku name="Goku" />
+                    <Goku
+                        name="Goku"
+                        life={this.state.goku}
+                        reduceHandler={this.reduceLife}
+                    />
                 </div>
             </div>
         );

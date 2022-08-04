@@ -4,48 +4,28 @@ import "./App.css";
 import superSaiyan from "./assets/images/saiyan.gif";
 import punch from "./assets/music/punch.mp3";
 import kamehameha from "./assets/music/kamehameha.mp3";
-import dragonPunch from "./assets/music/dragon-punch.mp3"
+import dragonPunch from "./assets/music/dragon-punch.mp3";
+import countHits from "./countHits";
 
 class Goku extends Component {
     state = {
-        hits: 0,
+        show: false,
     };
-
-    addOne = () => {
-        this.setState((prevState) => {
-            return {
-                hits: prevState.hits + 1,
-            };
-        });
-    };
-    addKick = () => {
-        this.setState((prevState) => {
-            return {
-                hits: prevState.hits + 15,
-            };
-        });
-    };
-    kamehame = () => {
-        this.setState((prevState) => {
-            return {
-                hits: prevState.hits + 50,
-            };
-        });
-    };
-
+    // effets sonore
     punchBtn = () => {
         new Audio(punch).play();
     };
-
+    // effets sonore
     kamehamehaBtn = () => {
         new Audio(kamehameha).play();
-    }
-
+    };
+    // effets sonore
     dragonPunchBtn = () => {
         new Audio(dragonPunch).play();
-    }
+    };
 
     render() {
+        const { name, addOneHit, hocState, addKick, kameha, life } = this.props;
         return (
             <div className="col">
                 {this.state.show ? (
@@ -59,16 +39,28 @@ class Goku extends Component {
                 ) : (
                     true
                 )}
+                <table className="jaugeVie">
+                    <thead>
+                        <tr>
+                            <th scope="col">Vie</th>
+                            <tbody>
+                                <tr>
+                                    <td>{life} %</td>
+                                </tr>
+                            </tbody>
+                        </tr>
+                    </thead>
+                </table>
                 <img className="goku" src={goku} alt="Goku" height={570} />{" "}
                 <br />
-                <button onClick={this.punchBtn} className="btn">
-                    {this.props.name} coup de poing Kikôha
+                <button onClick={addOneHit} className="btn">
+                    {name} coup de poing Kikôha
                 </button>
-                <button onClick={this.dragonPunchBtn} className="btn">
-                    {this.props.name} dragon punch multpiple
+                <button onClick={addKick} className="btn">
+                    {name} dragon punch multpiple
                 </button>
-                <button onClick={this.kamehamehaBtn} className="btn">
-                    {this.props.name} kamehameha ultime
+                <button onClick={kameha} className="btn">
+                    {name} kamehameha ultime
                 </button>
                 <button
                     onClick={() => {
@@ -76,17 +68,19 @@ class Goku extends Component {
                     }}
                     className="btn"
                 >
-                    {this.props.name} transformation
+                    {name} transformation
                 </button>
                 <table className="table">
                     <thead>
                         <tr>
                             <th scope="col">Coups</th>
+                            {/* <th scope="col">Vie</th> */}
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>{this.state.hits}</td>
+                            <td>{hocState.hits}</td>
+                            {/* <td>{life} %</td> */}
                         </tr>
                     </tbody>
                 </table>
@@ -95,4 +89,4 @@ class Goku extends Component {
     }
 }
 
-export default Goku;
+export default countHits(Goku);
