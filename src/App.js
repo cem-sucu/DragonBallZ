@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.scss";
+import "./App.css";
 import Goku from "./Goku";
 import Vegeta from "./Vegeta";
 import boule from "./assets/images/boule-de-crystale.png";

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import vegeta from "./assets/images/vegeta.png";
-import "./App.scss";
+import "./App.css";
 import superSaiyan from "./assets/images/saiyan.gif";
 import finalFlash from "./assets/music/vegeta-final-flash.mp3";
 import punch from "./assets/music/punch.mp3";

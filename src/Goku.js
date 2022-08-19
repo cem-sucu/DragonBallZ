@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import goku from "./assets/images/Goku.jpg";
-import "./App.scss";
+import "./App.css";
 import superSaiyan from "./assets/images/saiyan.gif";
 import punch from "./assets/music/punch.mp3";
 import kamehameha from "./assets/music/kamehameha.mp3";
